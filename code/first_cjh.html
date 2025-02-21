@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智启红途</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("../img/启动页面素材/启动页面1/背景.jpg");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            display: inline-block;
+        }
+
+        .tian {
+            width: 90vw;
+            bottom: -100vh;
+            left: 60px;
+            align-self: center;
+        }
+
+        .cloth {
+            width: 40vw;
+            z-index: 1;
+        }
+
+        @keyframes cloth1Animation {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: scale(1.05) translateY(-10px) translateX(-10px);
+                /* 轻微放大并上浮 */
+            }
+        }
+
+        /* 为绸缎2添加缩小和浮动动画 */
+        @keyframes cloth2Animation {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: scale(0.95) translateY(10px) translateX(10px);
+                /* 轻微缩小并下沉 */
+            }
+        }
+
+        .cloth1 {
+            top: -1vh;
+            right: 0;
+            animation: cloth1Animation 5s infinite ease-in-out;
+            /* 应用动画 */
+        }
+
+        .cloth2 {
+            width: 35vw;
+            top: -3vh;
+            left: -2vw;
+            animation: cloth2Animation 5s infinite ease-in-out;
+            /* 应用动画 */
+        }
+
+        .container {
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+            top: 30vh;
+            left: 9vw;
+        }
+
+        .container img {
+            position: static;
+        }
+
+        .ch {
+            margin: 0 15px;
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+        }
+
+        /* 
+        .start {
+            margin-right: 50px;
+
+        } */
+
+        .red {
+            margin-left: 300px;
+        }
+
+        .fire {
+            height: 88vh;
+            top: 12vh;
+            left: 39vw;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../img/启动页面素材/启动页面1/天安门.png" alt="天安门" class="tian">
+    <img src="../img/启动页面素材/启动页面1/绸缎1改.png" alt="绸缎1" class="cloth cloth1">
+    <img src="../img/启动页面素材/启动页面1/绸缎2.png" alt="绸缎2" class="cloth cloth2">
+    <div class="container">
+        <img src="../img/启动页面素材/启动页面1/智.png" alt="智" class="ch zhi">
+        <img src="../img/启动页面素材/启动页面1/启.png" alt="启" class="ch start">
+        <img src="../img/启动页面素材/启动页面1/红.png" alt="红" class="ch red">
+        <img src="../img/启动页面素材/启动页面1/途.png" alt="途" class="ch tour">
+    </div>
+    <img src="../img/启动页面素材/启动页面1/小火炬.png" alt="火炬" class="fire">
+</body>
+
+</html>

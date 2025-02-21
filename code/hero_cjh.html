@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>英雄人物全集</title>
+    <link rel="stylesheet" href="hero_cjh.css" />
+  </head>
+
+  <body>
+    <div class="top"><img src="../img/英雄人物素材/墙.png" alt="墙" /></div>
+    <div class="content">
+      <div class="imgs" id="imgsContainer">
+        <a href="#">
+          <img
+            src="../img/英雄人物素材/陈独秀.png"
+            class="chenduxiu active"
+            alt="陈独秀"
+        /></a>
+        <a href="#">
+          <img
+            src="../img/英雄人物素材/毛泽东.png"
+            class="lidazhao"
+            alt="李大钊"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <div class="text" id="text1">
+              <a href="#" data-img="chenduxiu" class="setFont"
+                >英雄称号-陈独秀</a
+              >
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text2">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text3">
+              <a href="#" data-img="lidazhao">英雄称号-李大钊</a>
+              <a href="#" data-img="lidazhao">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text4">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text5">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text6">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text7">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="text" id="text8">
+              <a href="#" data-img="chenduxiu">英雄称号-陈独秀</a>
+              <a href="#" data-img="chenduxiu">
+                <img src="../img/英雄人物素材/箭头 1.png" alt="" />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <script>
+      document.querySelectorAll(".text").forEach((textDiv) => {
+        textDiv.addEventListener("mouseenter", function (e) {
+          // 移除其他项的活动样式
+          document.querySelectorAll(".text a").forEach((otherTextDiv) => {
+            otherTextDiv.classList.remove("setFont");
+            otherTextDiv.querySelectorAll(".text a img").forEach((otherImg) => {
+              otherImg.src = "../img/英雄人物素材/箭头 1.png";
+            });
+          });
+          // 添加悬浮样式
+          this.querySelector("a").classList.add("setFont");
+          this.querySelector("a img").src =
+            "../img/英雄人物素材/箭头 (1) 1.png";
+          // 获取对应的图片类名
+          const imgClass = this.querySelector("a").getAttribute("data-img");
+
+          // 更换显示的图片
+          document.querySelectorAll(".imgs img").forEach((img) => {
+            img.classList.remove("active");
+            if (img.classList.contains(imgClass)) {
+              img.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
