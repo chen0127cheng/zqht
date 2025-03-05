@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>红途启航</title>
+    <style>
+      body {
+        background-image: url("../img/党史素材/背景.png");
+        height: 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
+      #ds {
+        width: 300px;
+        height: 440px;
+        margin: 100px auto;
+        position: relative;
+      }
+      #ds div {
+        width: 100%;
+        height: 400px;
+        /* background-color: bisque; */
+        transition: all 2s;
+        position: absolute;
+        display: flex;
+        left: 0;
+        top: 0;
+        transform-origin: center bottom;
+        /* box-shadow: 0 0 3px 0 #666; */
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #item1 {
+        /* overflow: hidden; */
+        /* position: relative; */
+        background-image: url("../img/党史素材/原图/遵义会议.jpeg");
+        background-size: auto;
+        background-position: center;
+        background-size: 100% 100%;
+        box-shadow: 0 0 3px 0 #666;
+        border-radius: 5px;
+        /* clip-path: inset(0 50px 0 50px); */
+      }
+      #item2 {
+        background-image: url("../img/党史素材/原图/四渡赤水.jpg");
+        background-size: cover;
+        background-size: 100% 100%;
+        box-shadow: 0 0 3px 0 #666;
+        border-radius: 5px;
+      }
+      #item3 {
+        background-image: url("../img/党史素材/原图/巧夺金沙江.jpg");
+        background-size: cover;
+        background-size: 100% 100%;
+        box-shadow: 0 0 3px 0 #666;
+        border-radius: 5px;
+        /* overflow: hidden; */
+      }
+      #item4 {
+        background-image: url("../img/党史素材/原图/强渡大渡河.jpg");
+        background-size: cover;
+        background-size: 100% 100%;
+        box-shadow: 0 0 3px 0 #666;
+        border-radius: 5px;
+        /* clip-path: inset(0 50px 0 50px); */
+      }
+      #item5 {
+        background-image: url("../img/党史素材/原图/飞夺泸定桥.jpg");
+        background-size: cover;
+        background-size: 100% 100%;
+        box-shadow: 0 0 3px 0 #666;
+        border-radius: 5px;
+        /* clip-path: inset(0 50px 0 50px); */
+      }
+      .rotate {
+        #item5 {
+          transform: translateX(0) rotate(0deg);
+        }
+        #item4 {
+          transform: translateX(100px) rotate(60deg);
+        }
+        #item3 {
+          transform: translateX(50px) rotate(30deg);
+        }
+        #item2 {
+          transform: translateX(-50px) rotate(-30deg);
+        }
+        #item1 {
+          transform: translateX(-100px) rotate(-60deg);
+        }
+      }
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      #ds:hover {
+        cursor: pointer;
+      }
+      .toTop {
+        z-index: 10;
+        transform: translate(-90%, -10%) scale(1.5) rotate(90deg) !important;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-height: 400px;
+      }
+      .p-title {
+        font-size: 2.5em;
+        /* display: flex;
+        top: 0; */
+        /* margin-bottom: 30%; */
+        top: 0;
+        left: 0;
+        font-weight: bold;
+        text-align: center;
+        /* writing-mode: vertical-rl; */
+        transform: rotate(-90deg);
+        color: white;
+        font-family: yunfeng, KaiTi, STKaiti, SimSun, sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        /* left: -80px; 默认状态：位于卡片左侧外部 */
+        /* top: 50%; */
+        transform: translateX(-60%) rotate(-90deg);
+        transform-origin: right bottom;
+        z-index: 2;
+      }
+
+      .detail-content {
+        display: none;
+        color: white;
+        /* padding: 15px; */
+        font-size: 14px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        max-width: 80%;
+      }
+      .toTop .detail-content {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        animation: fadeIn 0.5s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @media (max-width: 1100px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+    <script>
+      let lastClickedItem = null;
+      let rotateTest = 0;
+      let currentItemIndex = 2;
+      const pageLinks = {
+        item1: "zunyi.html",
+        item2: "sidu.html",
+        item3: "qiaoduo.html",
+        item4: "qiangdu.html",
+        item5: "feiduo.html",
+      };
+
+      const contentMap = {
+        item1: {
+          title: "遵义会议",
+          //detail: "1935年1月中共中央政治局扩大会议，确立毛泽东领导地位的重要会议",
+        },
+        item2: {
+          title: "四渡赤水",
+          // detail: "红军在长征中的经典战役，毛主席军事指挥艺术的杰出体现",
+        },
+        item3: {
+          title: "巧渡金沙江",
+          // detail: "1935年5月中央红军巧妙渡过金沙江，摆脱国民党军围追堵截",
+        },
+        item4: {
+          title: "强渡大渡河",
+          // detail: "红军勇士冒着枪林弹雨强渡天险，展现大无畏革命精神",
+        },
+        item5: {
+          title: "飞夺泸定桥",
+          // detail: "22勇士攀铁索夺桥头，创造战争史上的奇迹",
+        },
+      };
+
+      window.onload = function () {
+        var element = document.getElementById("ds");
+        element.classList.add("rotate");
+      };
+
+      function rotateElement() {
+        var element = document.getElementById("ds");
+        element.classList.add("rotate");
+        rotateTest++;
+      }
+
+      function setTop(event) {
+        const item = event.currentTarget;
+        const items = document.querySelectorAll(".item");
+
+        if (lastClickedItem && lastClickedItem !== item) {
+          resetItemContent(lastClickedItem);
+          lastClickedItem.classList.remove("toTop");
+          lastClickedItem.style.zIndex = "1";
+        }
+
+        if (!item.classList.contains("toTop") && rotateTest != 0) {
+          updateItemContent(item);
+          item.classList.add("toTop");
+          item.style.zIndex = "10";
+          currentItemIndex = Array.from(items).indexOf(item);
+        } else if (item.classList.contains("toTop")) {
+          window.open(pageLinks[item.id], "_blank", "noopener,noreferrer");
+        }
+        lastClickedItem = item;
+      }
+
+      function updateItemContent(item) {
+        const content = contentMap[item.id];
+        item.querySelector(".p-title").textContent = content.title;
+        item.querySelector(".detail-content").textContent = content.detail;
+      }
+
+      function resetItemContent(item) {
+        const defaultNumber = item.id.replace("item", "");
+        // item.querySelector(".p-title").textContent = defaultNumber;
+        item.querySelector(".detail-content").textContent = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="ds" onclick="rotateElement()">
+      <div id="item1" class="item" onclick="setTop(event)">
+        <p class="p-title"></p>
+        <div class="detail-content"></div>
+      </div>
+      <div id="item2" class="item" onclick="setTop(event)">
+        <p class="p-title"></p>
+        <div class="detail-content"></div>
+      </div>
+      <div id="item3" class="item" onclick="setTop(event)">
+        <p class="p-title"></p>
+        <div class="detail-content"></div>
+      </div>
+      <div id="item4" class="item" onclick="setTop(event)">
+        <p class="p-title"></p>
+        <div class="detail-content"></div>
+      </div>
+      <div id="item5" class="item" onclick="setTop(event)">
+        <p class="p-title"></p>
+        <div class="detail-content"></div>
+      </div>
+    </div>
+  </body>
+</html>

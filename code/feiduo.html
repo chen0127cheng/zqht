@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>飞夺泸定桥</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* font-family: "xhs", "Microsoft YaHei", sans-serif; */
+        font-size: 34px;
+        overflow-x: hidden;
+        display: grid;
+        scrollbar-width: none;
+        height: 100vh;
+        background: linear-gradient(180deg, #6988ac 0%, #4d453d 100%);
+        background-attachment: fixed;
+      }
+
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @font-face {
+        font-family: stx;
+        src: url("../font/STXINWEI.ttf");
+      }
+
+      #title {
+        /* font-size: 40px; */
+        /* font-weight: bold; */
+        /* margin: 50px; */
+        width: 100%;
+        height: 100vh;
+        text-align: left;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-image: url("../img/党史素材/党史内容/遵义会议/底图三.png"),
+          url("../img/党史素材/党史内容/遵义会议/底图2.png"),
+          url("../img/党史素材/党史内容/遵义会议/底图1.png");
+        background-size: 70%, 82.5%, 95%;
+        background-position: left top, left top, left;
+        background-repeat: no-repeat;
+        top: 0;
+        z-index: -1;
+        /* border-radius: 0 0 0 30px; */
+        margin-bottom: 50px;
+      }
+
+      .container {
+        height: 700px;
+        /* background-color: antiquewhite; */
+        margin: 50px;
+        border: 1px black solid;
+        border-radius: 10px;
+        position: relative;
+        /* 消除边框 */
+        border: none;
+      }
+
+      .title-word-1 {
+        z-index: 10;
+        margin: 10px;
+        padding: 0;
+        position: relative;
+        /* font-weight: bold; */
+        top: 50px;
+        left: 30px;
+        /* transform: translate(-50%, -50%); */
+        font-size: 3.5em;
+        /* font-size: 128px; */
+        color: #fff;
+        text-shadow: 0 0 10px #000;
+        font-family: yunfeng, KaiTi, SimSun, sans-serif;
+      }
+
+      .title-word-2 {
+        z-index: 10;
+        /* position: absolute; */
+        /* top: 20%; */
+        position: relative;
+        left: 50px;
+        /* transform: translate(-50%, -50%); */
+        font-size: 25px;
+        /* font-size: 37.5px; */
+        color: #fff;
+        text-shadow: 0 0 10px #000;
+        font-family: yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist {
+        display: flex;
+        gap: 20px;
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 12.png"),
+          url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 11.png");
+        background-size: 97%, 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* background-position: center; */
+        filter: brightness(1.5);
+        /* opacity: 0.35; */
+      }
+      .frist-word {
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      .frist-word-1 {
+        font-size: 66px;
+        color: #fff;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: center;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist-word-lst {
+        font-size: 42px;
+        color: #fff;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: center;
+        margin-top: -50px;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist-word-lst-2 {
+        font-size: 42px;
+        color: #fff;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: left;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist-word-2 {
+        font-size: 38px;
+        color: #fff;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: left;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+
+      /* 新增关键帧动画 */
+      @keyframes layerFadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #title {
+        /* 移除原背景设置 */
+        background-image: none !important;
+        /* 保留其他原有样式 */
+        position: relative;
+        z-index: 0;
+        overflow: hidden; /* 防止背景溢出 */
+      }
+
+      /* 通过伪元素和新增容器实现三层背景 */
+      #title::before,
+      #title::after,
+      #title > .background-layer {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: layerFadeIn 1s ease forwards;
+      }
+
+      /* 底层图片（原底图三） */
+      #title::before {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/背景1.png");
+        background-size: 70%;
+        background-position: right top;
+        animation-delay: 0.2s;
+        z-index: 2;
+      }
+
+      /* 中间层图片（原底图二） */
+      #title::after {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/背景2.png");
+        background-size: 82.5%;
+        background-position: right top;
+        animation-delay: 0.5s;
+        z-index: 1;
+      }
+
+      /* 顶层图片（原底图一） */
+      #title > .background-layer {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/背景3.png");
+        background-size: 95%;
+        background-position: right;
+        animation-delay: 1s;
+        z-index: 0;
+      }
+      .second {
+        display: flex;
+        flex-direction: row;
+        height: 1100px;
+        /* align-items: center; */
+        filter: brightness(1.5);
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 14.png"),
+          url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 13.png");
+        background-size: 97%, 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .second-word {
+        margin-left: 100px;
+      }
+      .second-word-1,
+      .second-word-3,
+      .third-word-1 {
+        font-size: 66px;
+        color: #fff;
+
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+        /* text-align: center; */
+        /* margin-bottom: 50px; */
+      }
+      .second-word-lit {
+        font-size: 38px;
+        color: #fff;
+
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+        /* text-align: center; */
+        /* margin-bottom: 50px; */
+      }
+      .second-word-2,
+      .second-word-4 {
+        font-size: 28px;
+        color: #fff;
+        text-align: left;
+
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .second-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        /* margin: 50px; */
+        /* padding-bottom: 50px; */
+      }
+      .second-img-1 {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 7.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      .second-img-2 {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 8.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      .second-img-3 {
+        background-image: url("../img/党史素材/党史内容/飞夺泸定桥/Rectangle\ 9.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="title">
+      <div class="background-layer"></div>
+      <p class="title-word-1">飞夺泸定桥</p>
+      <p class="title-word-2">泸定桥战役是长征中的经典战术之一。</p>
+    </div>
+    <div class="content">
+      <div class="container frist">
+        <div class="frist-word">
+          <p class="frist-word-1">飞夺泸定桥（1935年5月29日）</p>
+          <p class="frist-word-lst">奔袭奇迹</p>
+          <p class="frist-word-lst-2">时间线</p>
+          <p class="frist-word-2">
+            5月28日晨：红4团（团长王开湘、政委杨成武）接到命令“29日夺桥”。<br />
+            5月28日夜：暴雨中举火把疾行，与对岸川军赛跑，创造“昼夜240里”行军纪录。
+          </p>
+          <p class="frist-word-lst-2">地理障碍</p>
+          <p class="frist-word-2">途中翻越5座山岭，击溃川军4个营阻击。</p>
+        </div>
+      </div>
+      <div class="container second">
+        <div class="second-word">
+           
+          <p class="second-word-1">夺桥战斗实录</p>
+
+          <p class="second-word-lit">守军情况</p>
+          <p class="second-word-2">
+            川军第24军第4旅李全山团，拆除桥板，机枪封锁。
+          </p>
+
+          <p class="second-word-lit">突击队组成</p>
+          <p class="second-word-2">
+            第2连22人（现存名单包括廖大珠、刘梓华等11人）。
+          </p>
+
+          <p class="second-word-lit">战斗过程</p>
+          <p class="second-word-2">
+            全团火力压制东岸桥头堡。 突击队员攀铁索匍匐前进，边铺门板边战斗。
+            西岸川军纵火焚桥，突击队穿越火墙冲锋。
+          </p>
+
+          <p class="second-word-3">伤亡统计</p>
+
+          <p class="second-word-2">红军牺牲4人，川军溃逃百余人。</p>
+        </div>
+        <div class="second-img">
+          <div class="second-img-1"></div>
+          <div class="second-img-2"></div>
+          <div class="second-img-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+@font-face {
+  font-family: STX;
+  src: url(../font/STXINWEI.TTF) format("truetype");
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  font-family: KaiTi, STX, "Microsoft YaHei", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+.page {
+  width: 100%;
+  height: 810px;
+  background-size: cover; /* 背景图片覆盖整个div的宽度，高度自动调整以保持比例 */
+  background-position: center; /* 背景图片居中 */
+  background-repeat: no-repeat; /* 背景图片不重复 */
+  box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  padding: 0 120px;
+  overflow: hidden;
+}
+.page1 {
+  background-image: url(../img/教育拓展/4.png);
+  padding-top: 30px;
+}
+.page2 {
+  background-image: url(../img/教育拓展/5.png);
+}
+.page3 {
+  background-image: url(../img/教育拓展/6.png);
+}
+.title {
+  height: 5%;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.page1 p {
+  padding: 2px 0;
+}
+.title2 {
+  margin-top: 15px;
+}
+.page1 .imge {
+  height: 35%;
+  width: 17%;
+  margin-left: 30px;
+}
+.page1 .img1 {
+  margin: 0;
+}
+.page2 {
+  overflow: hidden;
+}
+.page2 .content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.page2 .content div {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.title3 {
+  margin: 30px 0;
+}
+.page2 .content div img {
+  width: 280px;
+}
+.title4 {
+  margin: 80px 0 60px 0;
+}
+.content3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page3Img {
+  height: 300px;
+  width: 200px;
+}
+.content3 div {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: row;
+  width: 50%;
+  gap: 10px;
+}

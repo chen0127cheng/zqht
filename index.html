@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智启红途</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <img
+      src="./img/启动页面素材/启动页面1/天安门.png"
+      alt="天安门"
+      class="tian"
+    />
+    <img
+      src="./img/启动页面素材/启动页面1/绸缎1改.png"
+      alt="绸缎1"
+      class="cloth cloth1"
+    />
+    <img
+      src="./img/启动页面素材/启动页面1/绸缎2.png"
+      alt="绸缎2"
+      class="cloth cloth2"
+    />
+    <div class="container">
+      <img src="./img/启动页面素材/启动页面1/智.png" alt="智" class="ch zhi" />
+      <img
+        src="./img/启动页面素材/启动页面1/启.png"
+        alt="启"
+        class="ch start"
+      />
+      <img src="./img/启动页面素材/启动页面1/红.png" alt="红" class="ch red" />
+      <img src="./img/启动页面素材/启动页面1/途.png" alt="途" class="ch tour" />
+    </div>
+    <a href="./code/catalog.html">
+      <img
+        src="./img/启动页面素材/启动页面1/小火炬.png"
+        alt="火炬"
+        class="fire"
+      />
+    </a>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const fireLink = document.querySelector("a");
+        fireLink.addEventListener("click", (event) => {
+          event.preventDefault(); // 阻止默认跳转行为
+
+          const fireImg = fireLink.querySelector("img");
+          document.body.classList.add("fade-out");
+          fireImg.style.transform = "scale(3)"; // 手动触发放大效果
+
+          // 使用 setTimeout 来延迟跳转，以便用户可以看到放大效果
+          setTimeout(() => {
+            window.location.href = fireLink.href; // 执行跳转
+          }, 500); // 延迟时间与 CSS 中的过渡时间相匹配
+        });
+      });
+    </script>
+  </body>
+</html>

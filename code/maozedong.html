@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>毛泽东</title>
+    <link rel="stylesheet" href="./maozedong.css" />
+  </head>
+  <body>
+    <div class="page page1">
+      <img
+        src="../img/英雄人物毛泽东/中国共产党、中国人民解放军和中华人民共和国的主要缔造者.png"
+        alt=""
+        class="first"
+      />
+      <img src="../img/英雄人物毛泽东/伟大的战略家.png" alt="" class="third" />
+      <img src="../img/英雄人物毛泽东/伟大的理论家.png" alt="" class="second" />
+      <img
+        src="../img/英雄人物毛泽东/伟大的无产阶级革命家.png"
+        alt=""
+        class="four"
+      />
+      <img
+        src="../img/英雄人物毛泽东/伟大的马克思主义者.png"
+        alt=""
+        class="five"
+      />
+      <img src="../img/英雄人物毛泽东/中国人民的领袖.png" alt="" class="six" />
+      <img src="../img/英雄人物毛泽东/_点箭头 1.png" alt="向下" class="seven" />
+      <img src="../img/英雄人物毛泽东/侧脸.png" alt="毛泽东" class="eight" />
+    </div>
+    <div class="page page2">
+         <div class="image-container">
+            <div class="image-wrapper" data-index="1">
+                <img src="../img/英雄人物毛泽东/长征背景画/image1.png" alt="Image 1" />
+            </div>
+            <div class="image-wrapper" data-index="2">
+                <img src="../img/英雄人物毛泽东/长征背景画/image2.png" alt="Image 2" />
+            </div>
+            <div class="image-wrapper" data-index="3">
+                <img src="../img/英雄人物毛泽东/长征背景画/image3.png" alt="Image 3" />
+            </div>
+            <div class="image-wrapper" data-index="4">
+                <img src="../img/英雄人物毛泽东/长征背景画/image4.png" alt="Image 4" />
+            </div>
+      </div>
+    </div>
+      <div class="description-box ">
+        <p>"1934-1936年的长征，是中国共产党生死存亡的关键转折。 </p>
+         <p>在国民党百万大军的围追堵截中，毛泽东凭借超凡的战略智慧，创造了人类战争史上的奇迹。 </p>
+         <p> 这段血与火交织的征程，见证了一位东方战略家的崛起。"。</p>
+      </div>
+    </div>
+    <div class="page page3">
+      <div class="border">
+        <img src="../img/英雄人物毛泽东/遵义会议照片.png" alt="遵义会议" class="zyImg">
+        <div class="zyContent">
+          <img src="../img/英雄人物毛泽东/遵义会议.png" alt="遵义会议">
+          <p>1935年1月 中共中央政治局扩大会议</p>
+          <p>纠正左倾错误军事路线</p>
+          <p>确立毛泽东在军事指挥核心地位</p>
+          <p>形成"集中优势兵力，运动歼灭敌人"新战略</p>
+        </div>
+      </div>
+    </div>
+    <div class="page page4">
+      <img src="../img/英雄人物毛泽东/地图原图.png" alt="四渡赤水">
+    </div>
+    <div class="page page5">
+      <img src="../img/英雄人物毛泽东/_你打你的，我打我的_.png" alt="_你打你的，我打我的_" class="_1">
+      <a href="https://zhuanlan.zhihu.com/p/12543536806" target="_blank">
+        <img src="../img/英雄人物毛泽东/论持久战照片.png" alt="论持久战" class="_2">
+      </a>
+      <img src="../img/英雄人物毛泽东/论持久战背景.png" alt="论持久战" class="_3">
+      <img src="../img/英雄人物毛泽东/_战略上藐视敌人，战术上重视敌人_.png" alt="_战略上藐视敌人，战术上重视敌人_" class="_4">
+      <img src="../img/英雄人物毛泽东/论持久战文字.png" alt="论持久战" class="_5">
+    </div>
+     <div class="page page6">
+      <img src="../img/英雄人物毛泽东/会师图片.png" alt="会师">
+     </div>
+     <div class="page page7">
+      <img src="../img/英雄人物毛泽东/Group 17.png" alt="军事层面">
+      <img src="../img/英雄人物毛泽东/Group 18.png" alt="政治层面">
+      <img src="../img/英雄人物毛泽东/Group 19.png" alt="精神层面">
+      <img src="../img/英雄人物毛泽东/党徽背景.png" alt="党徽">
+     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageWrappers = document.querySelectorAll(".image-wrapper");
+      
+        imageWrappers.forEach(wrapper => {
+          wrapper.addEventListener("mouseenter", () => {
+              // 移除所有激活状态
+              imageWrappers.forEach(w => w.classList.remove("active"));
+              // 添加当前激活状态
+              wrapper.classList.add("active");
+          });
+        });
+      // 容器移出时重置所有状态
+      document.querySelector(".image-container").addEventListener("mouseleave", () => {
+          imageWrappers.forEach(w => w.classList.remove("active"));
+      });
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>坚定信念——雪山草地行军</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-image: url("../img/精神素材/Firm.png"),
+          url("../img/精神素材/Firm-2.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100%;
+        overflow: hidden;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* 垂直居中 */
+        justify-content: right; /* 水平居中 */
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .word {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 文字靠左对齐 */
+        justify-content: center;
+        width: 700px;
+        margin-top: 150px;
+        position: relative;
+      }
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @font-face {
+        font-family: stx;
+        src: url("../font/STXINWEI.ttf");
+      }
+
+      .word-1 {
+        font-size: 34px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: center; /* 文字居中 */
+        font-family: stx, yunfeng, KaiTi, Arial, sans-serif;
+        margin-right: 150px;
+      }
+      .word-2 {
+        font-size: 19px;
+        margin-top: 20px;
+        color: #fffefe;
+        text-align: justify; /* 文字两端对齐 */
+        margin-right: 150px;
+        line-height: 2.5;
+        /* padding-left: 5ch; */
+      }
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="wu"></div>
+      <div class="word">
+        <p class="word-1">信念是支撑红军克服困难的核心动力</p>
+        <p class="word-2">
+          1935年，中央红军翻越海拔4000米以上的夹金山、梦笔山等雪山，穿越松潘草地。战士们身着单衣、草鞋，面对缺氧、严寒和沼泽，日均行军30公里，许多人因饥饿或失温牺牲。例如，红四方面军战士贺岳年仅12岁，身患重病仍坚持行军，用双脚丈量两万五千里。此间，“北上抗日”的信念凝聚全军，毛泽东写下“更喜岷山千里雪，三军过后尽开颜”的豪迈诗句，彰显信念的力量。
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>四渡赤水</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        /* font-family: "xhs", "Microsoft YaHei", sans-serif; */
+        font-size: 34px;
+        overflow-x: hidden;
+        display: grid;
+        scrollbar-width: none;
+        height: 100vh;
+        background: linear-gradient( 180deg, #49676E 0%, #332A27 100%);
+        background-attachment: fixed;
+      }
+
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @font-face {
+        font-family: stx;
+        src: url("../font/STXINWEI.ttf");
+      }
+
+      #title {
+        /* font-size: 40px; */
+        /* font-weight: bold; */
+        /* margin: 50px; */
+        width: 100%;
+        height: 100vh;
+        text-align: left;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-image: url("../img/党史素材/党史内容/四渡赤水/背景3.png"),
+          url("../img/党史素材/党史内容/四渡赤水/背景2.png"),
+          url("../img/党史素材/党史内容/四渡赤水/背景1.png");
+        background-size: 70%, 82.5%, 95%;
+        background-position: left top, left top, left;
+        background-repeat: no-repeat;
+        top: 0;
+        z-index: -1;
+        /* border-radius: 0 0 0 30px; */
+        margin-bottom: 50px;
+      }
+
+      .container {
+        height: 700px;
+        /* background-color: antiquewhite; */
+        margin: 50px;
+        border: 1px black solid;
+        border-radius: 10px;
+        position: relative;
+        /* 消除边框 */
+        border: none;
+      }
+
+      .title-word-1 {
+        z-index: 10;
+        margin: 10px;
+        padding: 0;
+        position: relative;
+        /* font-weight: bold; */
+        top: 50px;
+        left: 30px;
+        /* transform: translate(-50%, -50%); */
+        font-size: 3.5em;
+        /* font-size: 128px; */
+        color: #fff;
+        text-shadow: 0 0 10px #000;
+        font-family: yunfeng, KaiTi, SimSun, sans-serif;
+      }
+
+      .title-word-2 {
+        z-index: 10;
+        position: relative;
+        left: 60px;
+        /* transform: translate(-50%, -50%); */
+        font-size: 25px;
+        /* font-size: 37.5px; */
+        color: #fff;
+        text-shadow: 0 0 10px #000;
+        font-family: yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist {
+        display: flex;
+        flex-direction: column;
+        background-image: url("../img/党史素材/党史内容/四渡赤水/Rectangle\ 10.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: brightness(1.5);
+        gap:-10px;
+        height: 750px;
+      }
+      .frist-img {
+        align-items: center;
+        width: 80%;
+        height: 500px;
+        align-self: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../img/党史素材/党史内容/四渡赤水/Rectangle\ 22.png');
+      }
+      .frist-word-1 {
+        font-size: 66px;
+        color: #fff;
+        /* margin-top: 0; */
+        margin-bottom: -20px;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: center;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .frist-word-2 {
+        position: relative;
+        font-size: 42px;
+        color: #fff;
+        /* text-shadow: 0 0 10px #000; */
+        text-align: left;
+        left:11.5%;
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+
+      /* 新增关键帧动画 */
+      @keyframes layerFadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #title {
+        /* 移除原背景设置 */
+        background-image: none !important;
+        /* 保留其他原有样式 */
+        position: relative;
+        z-index: 0;
+        overflow: hidden; /* 防止背景溢出 */
+      }
+
+      /* 通过伪元素和新增容器实现三层背景 */
+      #title::before,
+      #title::after,
+      #title > .background-layer {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        animation: layerFadeIn 1s ease forwards;
+      }
+
+      /* 底层图片（原底图三） */
+      #title::before {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/背景1.png");
+        background-size: 70%;
+        background-position: left top;
+        animation-delay: 0.2s;
+        z-index: 2;
+      }
+
+      /* 中间层图片（原底图二） */
+      #title::after {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/背景2.png");
+        background-size: 82.5%;
+        background-position: left top;
+        animation-delay: 0.5s;
+        z-index: 1;
+      }
+
+      /* 顶层图片（原底图一） */
+      #title > .background-layer {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/背景3.png");
+        background-size: 95%;
+        background-position: left;
+        animation-delay: 1s;
+        z-index: 0;
+      }
+      .second {
+        display: flex;
+        flex-direction: row;
+        height: 1100px;
+        /* align-items: center; */
+        filter: brightness(1.5);
+        background-image: url("../img/党史素材/党史内容/四渡赤水/Rectangle\ 24.png");
+      
+      }
+      .second-word {
+        margin-left: 50px;;
+      }
+      .second-word-1,
+      .second-word-3 ,.third-word-1 {
+        font-size: 66px;
+        color: #fff;
+       
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+        /* text-align: center; */
+        /* margin-bottom: 50px; */
+      }
+      .second-word-lit{
+        font-size: 38px;
+        color: #fff;
+        
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+        /* text-align: center; */
+        /* margin-bottom: 50px; */
+      }
+      .second-word-2,
+      .second-word-4 {
+        font-size: 28px;
+        color: #fff;
+        text-align: left;
+        
+        font-family: stx, yunfeng, KaiTi, STXinwei-Regular, SimSun, sans-serif;
+      }
+      .second-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        /* margin: 50px; */
+        /* padding-bottom: 50px; */
+      }
+      .second-img-1 {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/Rectangle\ 8.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      .second-img-2 {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/Rectangle\ 9.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      .second-img-3 {
+        background-image: url("../img/党史素材/党史内容/四渡赤水/Rectangle\ 25.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: right;
+        padding: 20px;
+        margin: 20px;
+        width: 600px;
+        height: 350px;
+      }
+      .third{
+        
+        /* margin-top: 100px; */
+        height: 450px;
+        filter: brightness(1.5);
+        background-size: cover;
+        text-align: bottom;
+        background-image: url("../img/党史素材/党史内容/遵义会议/Vector.png");
+      }
+      .third-word {
+        top:50px;
+      margin-top: 50px;;}
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="title">
+      <div class="background-layer"></div>
+      <p class="title-word-1">四渡赤水</p>
+      <p class="title-word-2">
+        红军在此展现出的灵活机动战术
+      </p>
+    </div>
+    <div class="content">
+      <div class="container frist">
+        
+        <div class="frist-word">
+          <p class="frist-word-1">四渡赤水（1935年1月29日-3月22日）</p>
+          <p class="frist-word-2">战役全流程</p>
+        </div>
+        <div class="frist-img">
+          
+        </div>
+      </div>
+      <div class="container second">
+        <div class="second-word">
+          <p class="second-word-1">关键战术解析</p>
+
+            
+          
+            <p class="second-word-lit">情报战</p>
+            <p class="second-word-2">红军通过截获国民党密电，掌握蒋介石部署（如“调滇军孙渡部驰援贵阳”）。</p>
+            
+            <p class="second-word-lit">心理博弈</p>
+            <p class="second-word-2">毛泽东利用蒋介石多疑性格，制造“红军欲攻贵阳”假象，迫使滇军让出通道。 地理挑战 赤水河湍急难渡，红军依靠竹筏、浮桥（用门板、棺材板搭建）完成机动。</p>
+            
+          </p>
+          <p class="second-word-3">历史评价</p>
+
+           
+          
+            <p class="second-word-lit">国共双方视角</p>
+            <p class="second-word-2"> 
+              o 蒋介石日记：“赤水之役，为平生用兵最大之耻辱。” <br />
+            <p class="second-word-2">
+              o 刘伯承回忆：“四渡赤水是毛主席军事指挥艺术的‘神来之笔’。”
+          </p>
+        </div>
+        <div class="second-img">
+          <div class="second-img-1"></div>
+          <div class="second-img-2"></div>
+          <div class="second-img-3"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>

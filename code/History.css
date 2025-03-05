@@ -1,0 +1,196 @@
+body {
+  background-image: url("../img/党史素材/背景.png");
+  /* width: 100%; */
+  height: 100%;
+  background-size: cover; /* 拉伸背景图以覆盖整个区域 */
+  background-attachment: fixed; /* 背景图固定，不随滚动条滚动 */
+  background-position: center;
+}
+#ds {
+  width: 300px;
+  height: 440px;
+  margin: 100px auto;
+  position: relative;
+}
+#ds div {
+  width: 100%;
+  height: 400px;
+  background-color: bisque;
+  transition: all 2s;
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+  /*旋转时，以盒子底部的中心为坐标原点*/
+  transform-origin: center bottom;
+  box-shadow: 0 0 3px 0 #666;
+  z-index: 1;
+}
+img {
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+#item1 {
+  /* overflow: hidden; */
+  /* position: relative; */
+  background-image: url("../img/党史素材/原图/遵义会议.jpeg");
+  background-size: auto;
+  background-position: center;
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px 0 #666;
+  border-radius: 5px;
+  /* clip-path: inset(0 50px 0 50px); */
+}
+#item2 {
+  background-image: url("../img/党史素材/原图/四渡赤水.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px 0 #666;
+  border-radius: 5px;
+}
+#item3 {
+  background-image: url("../img/党史素材/原图/巧夺金沙江.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px 0 #666;
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+#item4 {
+  background-image: url("../img/党史素材/原图/强渡大渡河.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px 0 #666;
+  border-radius: 5px;
+  /* clip-path: inset(0 50px 0 50px); */
+}
+#item5 {
+  background-image: url("../img/党史素材/原图/飞夺泸定桥.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+  box-shadow: 0 0 3px 0 #666;
+  border-radius: 5px;
+  /* clip-path: inset(0 50px 0 50px); */
+}
+
+.rotate {
+  #item5 {
+    transform: translateX(0) rotate(0deg);
+  }
+  #item4 {
+    transform: translateX(100px) rotate(60deg);
+  }
+  #item3 {
+    transform: translateX(50px) rotate(30deg);
+  }
+  #item2 {
+    transform: translateX(-50px) rotate(-30deg);
+  }
+  #item1 {
+    transform: translateX(-100px) rotate(-60deg);
+  }
+}
+#ds:hover {
+  cursor: pointer;
+}
+.toTop {
+  z-index: 10;
+  /* transform-origin: bottom bottom !important; */
+  transform: translate(-90%, -10%) scale(1.5) rotate(90deg) !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.navigation-buttons button {
+  position: fixed;
+  bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+#prevButton {
+  left: 20px;
+}
+#nextButton {
+  right: 20px;
+}
+
+/* 鼠标hover效果 要求单击单个元素后才生效 hover提示“点击跳转至下一页面” */
+.img-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* text-align: ; */
+  cursor: pointer;
+}
+.hover-effect {
+  /* position: absolute; */
+  .img-info {
+    display: flex;
+  }
+
+  /* transform: translateY(-100px) !important; */
+}
+.p-title {
+  font-size: 2.5em;
+  /* display: flex;
+  top: 0; */
+  /* margin-bottom: 30%; */
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  text-align: center;
+  /* writing-mode: vertical-rl; */
+  transform: rotate(-90deg);
+  color: white;
+  font-family: yunfeng, KaiTi, STKaiti, SimSun, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  /* left: -80px; 默认状态：位于卡片左侧外部 */
+  /* top: 50%; */
+  transform: translateX(-60%) rotate(-90deg);
+  transform-origin: right bottom;
+  z-index: 2;
+}
+@font-face {
+  font-family: yunfeng;
+  src: url("../字体/云峰飞云体.ttf");
+}
+.detail-content {
+  display: none;
+  color: white;
+  /* padding: 15px; */
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+}
+.toTop .detail-content {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

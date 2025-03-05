@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>目录</title>
+    <style>
+      body {
+        /* background-color: rgb(79, 28, 28); */
+        /* font-family: Arial, sans-serif; */
+        /* font-size: 16px; */
+        /* line-height: 5; */
+        margin: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 8%;
+        scrollbar-width: none;
+        background-image: url("../img/目录素材/目录背景.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+      }
+      content {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: wrap;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .history,
+      .politics,
+      .education,
+      .people {
+        margin: 10px;
+        padding: 20px;
+        /* background-color: #665d5d; */
+        border-radius: 20px;
+        align-content: center;
+        writing-mode: vertical-rl;
+        letter-spacing: -5px;
+        letter-spacing: -0.05em;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        text-align: center;
+        width: 110px;
+        height: 350px;
+        font: 3.5em yunfeng, KaiTi, sans-serif;
+        color: white;
+        z-index: 5;
+      }
+
+      .mulu {
+        /* background-color: rgb(79, 28, 28); */
+        background: linear-gradient(
+          90.00000000000009deg,
+          #fac709 0%,
+          #fc6001 88%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font: 5em yunfeng, KaiTi, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        box-shadow: none;
+        writing-mode: vertical-rl;
+        z-index: 5;
+        letter-spacing: -0.05em;
+        padding-left: 5%;
+        padding-right: 5%;
+        /* width: 200px;
+        height: 900px; */
+      }
+      .mulu:hover {
+        cursor: pointer;
+      }
+
+      .history,
+      .politics {
+        top: 50px;
+        position: relative;
+        z-index: 1;
+      }
+      li {
+        animation-name: rotate;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+      }
+      @keyframes rotate {
+        from {
+          transform: translateY(40%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      li:hover {
+        transform: matrix3d(
+          1.05,
+          0,
+          0,
+          0,
+          0,
+          1.05,
+          0,
+          0,
+          0,
+          0,
+          1.05,
+          0,
+          0,
+          0,
+          0,
+          1
+        );
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .history {
+        background-image: url("../img/目录素材/长征时期图片.png");
+        background-size: cover;
+        background-position: center;
+
+        opacity: 0.8;
+      }
+      .education {
+        background-image: url("../img/目录素材/教育拓展图片.png");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+      .people {
+        background-image: url("../img/目录素材/长征人物图片.png");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+      .politics {
+        background-image: url("../img/目录素材/长征精神图片.png");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+
+      /* 设置字体 */
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <container>
+      <ul>
+        <li class="history" onclick="window.location.href='History.html'">
+          红途启航
+        </li>
+        <li class="people" onclick="window.location.href='HeroicFigures.html'">
+          英魂长存
+        </li>
+        <li class="mulu">目录</li>
+        <li class="education" onclick="window.location.href='Educate.html'">
+          薪火相传
+        </li>
+        <li class="politics" onclick="window.location.href='Politics.html'">
+          精神丰碑
+        </li>
+      </ul>
+      <!-- <img src="../img/目录素材/发光大火炬.png" alt="火炬" /> -->
+    </container>
+  </body>
+</html>

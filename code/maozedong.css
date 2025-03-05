@@ -1,0 +1,400 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "xhs", "Microsoft YaHei", sans-serif;
+  font-size: 34px;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  font-family: "PingFang SC-Medium";
+}
+.page {
+  width: 100%;
+  height: 730px;
+  background-size: cover; /* 背景图片覆盖整个div的宽度，高度自动调整以保持比例 */
+  background-position: center; /* 背景图片居中 */
+  background-repeat: no-repeat; /* 背景图片不重复 */
+  box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page1 {
+  background-image: url("../img/英雄人物毛泽东/Slice 1.png");
+}
+
+.page2 {
+  background-image: url("../img/英雄人物毛泽东/Slice 2.png");
+}
+.page3 {
+  background-image: url("../img/英雄人物毛泽东/Slice\ 3.png");
+}
+.page4 {
+  background-image: url("../img/英雄人物毛泽东/Slice\ 4.png");
+}
+.page5 {
+  background-image: url("../img/英雄人物毛泽东/Slice\ 5.png");
+}
+.page6 {
+  background-image: url("../img/英雄人物毛泽东/Slice\ 6.png");
+}
+.page7 {
+  background-image: url("../img/英雄人物毛泽东/Slice\ 7.png");
+}
+.page1 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.first,
+.second,
+.third,
+.four,
+.five,
+.six,
+.seven {
+  position: relative;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.first {
+  top: 80px;
+  left: 220px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 0.2s forwards;
+}
+.eight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 360px;
+}
+
+.second {
+  top: 208px;
+  left: 180px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 1.2s forwards;
+}
+
+.third {
+  top: 268px;
+  left: calc(100% - 400px);
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 0.4s forwards;
+}
+.four {
+  top: 350px;
+  left: 100px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 1s forwards;
+}
+.five {
+  top: 300px;
+  left: calc(100% - 450px);
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 0.6s forwards;
+}
+.six {
+  top: 390px;
+  left: 600px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 0.8s forwards;
+}
+.seven {
+  top: 410px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-in-out 1.4s forwards;
+}
+.page2 .image-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box; /* 包括padding和border在内计算宽度 */
+}
+
+.page2 .image-container img {
+  width: 100%;
+  height: 100%;
+}
+.description-box {
+  width: 100vw;
+  height: 200px;
+  position: absolute;
+  background-color: rgba(42, 0, 0, 0.53);
+  top: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.description-box p {
+  color: white;
+  font-family: "PingFang SC-Medium";
+  text-align: center;
+  font-size: 24px;
+  /* padding-left: 160px;
+  padding-right: 180px; */
+  margin: 0;
+  /* opacity: 1 !important; */
+}
+
+.page2 .image-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  /* gap: 10px; */
+}
+
+.page2 .image-wrapper {
+  flex: 1;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  /* border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+}
+
+.page2 .image-wrapper.active {
+  flex: 2;
+}
+
+.page2 .image-wrapper:not(.active) {
+  flex: 0.7; /* 收缩时的宽度比例 */
+  filter: brightness(0.8); /* 非激活图片变暗 */
+}
+
+.page2 .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.page2 .image-wrapper:hover img {
+  transform: scaleX(1.05);
+}
+
+.page3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 确保容器高度撑满视口 */
+}
+
+.page3 .border {
+  background-image: url(../img/英雄人物毛泽东/遵义会议边框.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+.page3 .border .zyImg {
+  width: 65%;
+  height: 490px;
+}
+.zyContent {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.zyContent > img {
+  width: 40%;
+  max-width: 200px;
+  margin: 200px auto 0; /* 上边距50px + 水平居中 */
+  padding: 0; /* 清除原有padding */
+}
+
+.zyContent p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.zyContent p:first-of-type {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 50px auto 50px 10px;
+}
+
+.zyContent p:nth-of-type(2),
+.zyContent p:nth-of-type(3),
+.zyContent p:nth-of-type(4) {
+  margin-left: 10px;
+}
+.page4 img {
+  /* position: relative; */
+  width: 60%;
+  height: auto;
+  margin: 50px 300px;
+}
+.page5 {
+  position: relative;
+}
+.page5 img {
+  position: absolute;
+}
+._1 {
+  right: 0;
+  width: 40%;
+  right: 50px;
+  top: 10px;
+}
+._2 {
+  width: 26%;
+  z-index: 999;
+  left: 320px;
+  top: 48px;
+}
+._3 {
+  top: 90px;
+  left: 600px;
+  width: 35%;
+}
+._4 {
+  bottom: 30px;
+  width: 70%;
+  left: 40px;
+}
+._5 {
+  top: 120px;
+  height: 55%;
+  left: 740px;
+}
+.page6 img {
+  width: 80%;
+  margin: 85px 170px;
+}
+.page7 {
+  position: relative;
+}
+.page7 img {
+  position: absolute;
+}
+.page7 img:nth-child(1),
+.page7 img:nth-child(2),
+.page7 img:nth-child(3) {
+  width: 10%;
+  z-index: 999;
+  top: 230px;
+}
+.page7 img:first-child {
+  left: 240px;
+}
+.page7 img:nth-child(2) {
+  left: 640px;
+}
+.page7 img:nth-child(3) {
+  left: 1040px;
+}
+.page7 img:nth-child(4) {
+  width: 45%;
+  bottom: 0;
+  right: 0;
+}
+@media (min-width: 1824px) {
+  .first {
+    top: 80px;
+    left: 400px;
+  }
+  .eight {
+    top: 35%;
+  }
+  .second {
+    left: 280px;
+  }
+  .third {
+    left: calc(100% - 500px);
+  }
+  .four {
+    left: 200px;
+  }
+  .five {
+    left: calc(100% - 550px);
+  }
+  .six {
+    left: 800px;
+    top: 370px;
+  }
+  .first,
+  .second,
+  .third,
+  .four,
+  .five,
+  .six,
+  .seven {
+    height: 45%;
+  }
+  .page5 img:nth-child(2) {
+    top: 45px;
+    left: 500px;
+    width: 20%;
+  }
+  .page5 img:nth-child(3) {
+    top: 95px;
+    left: 800px;
+    width: 25%;
+  }
+  .page5 img:nth-child(4) {
+    bottom: 40px;
+    width: 65%;
+  }
+  .page7 img:first-child {
+    left: 440px;
+  }
+  .page7 img:nth-child(2) {
+    left: 840px;
+  }
+  .page7 img:nth-child(3) {
+    left: 1240px;
+  }
+  .page7 img:nth-child(4) {
+    width: 35%;
+  }
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>精神丰碑</title>
+    <style>
+      /* 保持原有CSS不变，只添加新样式 */
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url("../img/精神素材/背景.png");
+        background-size: cover; /* 背景图片覆盖整个div的宽度，高度自动调整以保持比例 */
+        background-position: center; /* 背景图片居中 */
+        background-repeat: no-repeat; /* 背景图片不重复 */
+        box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+        overflow-y: hidden;
+        width: 100%;
+        height: 500px;
+      }
+
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @font-face {
+        font-family: stx;
+        src: url("../font/STXINWEI.ttf");
+      }
+
+      .container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 200px auto;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        z-index: 5;
+      }
+
+      .center-pillar {
+        position: absolute;
+        width: 600px;
+        height: 850px;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        background-image: url("../img/精神素材/中心柱.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 2;
+      }
+
+      .frist {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: -150px;
+        transform-origin: center center -300px;
+        transition: all 0.8s ease-in-out; /* 调慢过渡速度更平滑 */
+        z-index: 1;
+        transform: rotateY(0deg) translateZ(250px);
+        background-image: url("../img/精神素材/Group 8.png");
+      }
+
+      .second {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: -150px;
+        transform-origin: center center -300px;
+        transition: all 0.8s ease-in-out; /* 调慢过渡速度更平滑 */
+        z-index: 1;
+        transform: rotateY(90deg) translateZ(250px);
+        background-image: url("../img/精神素材/Group 9.png");
+      }
+      .third {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: -150px;
+        transform-origin: center center -300px;
+        transition: all 0.8s ease-in-out; /* 调慢过渡速度更平滑 */
+        z-index: 1;
+        transform: rotateY(180deg) translateZ(250px);
+        background-image: url("../img/精神素材/Group 13.png");
+      }
+      .fourth {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        left: -150px;
+        transform-origin: center center -300px;
+        transition: all 0.8s ease-in-out; /* 调慢过渡速度更平滑 */
+        z-index: 1;
+        transform: rotateY(270deg) translateZ(250px);
+        background-image: url("../img/精神素材/Group 14.png");
+      }
+
+      /* 文字样式 */
+      .word-1 {
+        display: none;
+        position: absolute;
+        /* top: 50%; */
+        left: 42%;
+        bottom: 15%;
+        width: 320px;
+        transform: translate(-50%, -50%);
+        font-size: 26px;
+        color: #fff;
+        text-align: center;
+        z-index: 3;
+        font-family: REEJI-CHAO-KunPengGB-Regular, stx, yunfeng, sans-serif;
+        text-align: left;
+        /* bottom: 0; */
+      }
+      .word-2 {
+        display: none;
+        position: absolute;
+        /* top: 50%; */
+        left: 40%;
+        width: 300px;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        z-index: 3;
+        font-family: REEJI-CHAO-KunPengGB-Regular, stx, yunfeng, sans-serif;
+        text-align: left;
+      }
+      .con:hover .word-1 {
+        display: block;
+      }
+      .con:hover .word-2 {
+        display: block;
+      }
+      .con:hover .bac {
+        display: block;
+        background-color: black;
+        opacity: 0.5;
+        position: absolute;
+        bottom: 0;
+        left: 5px;
+        width: 99%;
+        height: 35%;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .first:hover {
+        height: 300px; /* 悬停时高度变为300px */
+      }
+
+      /* 初始化位置 */
+      /* img:nth-child(1) {
+        transform: rotateY(0deg) translateZ(250px);
+      }
+      img:nth-child(2) {
+        transform: rotateY(90deg) translateZ(250px);
+      }
+      img:nth-child(3) {
+        transform: rotateY(180deg) translateZ(250px);
+      }
+      img:nth-child(4) {
+        transform: rotateY(270deg) translateZ(250px);
+      } */
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <div class="center-pillar"></div> -->
+    <div class="container">
+      <div class="frist con" onclick="window.open('Firm-beliefs.html')">
+        <div class="word-1">坚定信念——雪山草地行军</div>
+        <div class="word-2">
+          红军在雪山草地中展现的坚定信念，是克服极端自然条件的核心动力
+        </div>
+        <div class="bac"></div>
+      </div>
+      <div class="second con" onclick="window.open('Forge-ahead.html')">
+        <div class="word-1">勇往直前——飞夺泸定桥</div>
+        <div class="word-2">飞夺泸定桥的壮举是红军勇往直前精神的典范。</div>
+        <div class="bac"></div>
+      </div>
+      <div class="third con" onclick="window.open('Sacrifice.html')">
+        <div class="word-1">不怕牺牲——湘江战役</div>
+        <div class="word-2">
+          湘江战役中红军的惨烈牺牲，为长征保留了革命火种。
+        </div>
+        <div class="bac"></div>
+      </div>
+      <div class="fourth con" onclick="window.open('Self.html')">
+        <div class="word-1">独立自主——遵义会议</div>
+        <div class="word-2">遵义会议是红军独立自主制定战略的里程碑。</div>
+        <div class="bac"></div>
+      </div>
+      <!-- <img src="../img/精神素材/Group 8.png" alt="" /> -->
+      <!-- <img src="../img/精神素材/Group 9.png" alt="" />
+      <img src="../img/精神素材/Group 13.png" alt="" />
+      <img src="../img/精神素材/Group 14.png" alt="" /> -->
+    </div>
+
+    <script>
+      let times = 0;
+      const container = document.querySelector(".container");
+      const imgs = document.querySelectorAll(".con");
+      const rotationSpeed = 2000; // 2秒旋转一次
+
+      // 旋转函数
+      function rotateCarousel() {
+        times++;
+        imgs.forEach((img, index) => {
+          const angle = (times + index) * 90;
+          // 判断是否为270度位置
+          const isBackPosition = angle % 360 === 270;
+
+          // 动态调整Z轴位置和层级
+          const translateZ = isBackPosition ? 150 : 250;
+          img.style.zIndex = isBackPosition ? 1 : 2;
+
+          img.style.transform = `rotateY(${angle}deg) translateZ(${translateZ}px)`;
+        });
+      }
+
+      // 自动旋转
+      let autoRotate = setInterval(rotateCarousel, rotationSpeed);
+
+      // 可选：添加鼠标悬停暂停功能
+      container.addEventListener("mouseenter", () => clearInterval(autoRotate));
+      container.addEventListener("mouseleave", () => {
+        autoRotate = setInterval(rotateCarousel, rotationSpeed);
+      });
+    </script>
+  </body>
+</html>

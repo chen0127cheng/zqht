@@ -1,0 +1,175 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("./img/启动页面素材/启动页面1/背景.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+.fade-out {
+  opacity: 0;
+}
+
+img {
+  position: absolute;
+  display: inline-block;
+}
+
+.tian {
+  width: 90vw;
+  bottom: -100vh;
+  left: 60px;
+  align-self: center;
+}
+
+.cloth {
+  width: 40vw;
+  z-index: 1;
+}
+
+@keyframes cloth1Animation {
+  0%,
+  100% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px) translateX(-10px); /* 轻微放大并上浮 */
+  }
+}
+
+/* 为绸缎2添加缩小和浮动动画 */
+@keyframes cloth2Animation {
+  0%,
+  100% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  50% {
+    transform: scale(0.95) translateY(10px) translateX(10px); /* 轻微缩小并下沉 */
+  }
+}
+
+.cloth1 {
+  top: -1vh;
+  right: 0;
+  /* animation: cloth1Animation 5s infinite ease-in-out; */
+}
+
+.cloth2 {
+  width: 35vw;
+  top: -3vh;
+  left: -2vw;
+  /* animation: cloth2Animation 5s infinite ease-in-out; */
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 30vh;
+  left: 9vw;
+}
+
+.container img {
+  position: static;
+}
+
+.ch {
+  margin: 0 15px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+}
+
+/* 
+.start {
+    margin-right: 50px;
+} */
+
+.red {
+  margin-left: 300px;
+}
+
+.fire {
+  height: 88vh;
+  top: 12vh;
+  left: 39vw;
+  transition: transform 5s ease;
+}
+
+.fire:active {
+  transform: scale(2);
+}
+.fire {
+  transform: scale(1);
+  transition: transform 0.8s ease-in-out;
+}
+.fire:hover {
+  transform: scale(1.1);
+}
+@media (min-width: 1824px) {
+  .ch {
+    width: 260px;
+    height: 260px;
+  }
+  .red {
+    margin-left: 350px;
+  }
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .tian {
+    width: 80vw;
+    bottom: -100vh;
+    left: 110px;
+  }
+  .cloth {
+    width: 37vw;
+  }
+  .ch {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px) {
+  .tian {
+    width: 70vw;
+    bottom: -100vh;
+    left: 140px;
+  }
+  .cloth {
+    width: 35vw;
+  }
+  .container {
+    left: 8vw;
+  }
+  .ch {
+    margin: 0 10px;
+    width: 150px;
+    height: 150px;
+  }
+  .red {
+    margin-left: 170px;
+  }
+}
+@media (max-width: 720px) {
+  .ch {
+    margin: 0 10px;
+    width: 130px;
+    height: 130px;
+  }
+  .ch {
+    margin: 0 10px;
+    width: 100px;
+    height: 100px;
+  }
+  .red {
+    margin-left: 150px;
+  }
+}

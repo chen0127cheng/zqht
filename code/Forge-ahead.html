@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>勇往直前——飞夺泸定桥</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-image: url("../img/精神素材/Forge-1.png"),
+          url("../img/精神素材/Forge-2.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100%;
+        overflow: hidden;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* 垂直居中 */
+        justify-content: right; /* 水平居中 */
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .word {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* 文字靠左对齐 */
+        justify-content: center;
+        width: 700px;
+        margin-top: 150px;
+        position: relative;
+      }
+      @font-face {
+        font-family: yunfeng;
+        src: url("../font/云峰飞云体.ttf");
+      }
+      @font-face {
+        font-family: stx;
+        src: url("../font/STXINWEI.ttf");
+      }
+
+      .word-1 {
+        font-size: 34px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: center; /* 文字居中 */
+        font-family: stx, yunfeng, KaiTi, Arial, sans-serif;
+        margin-right: 150px;
+      }
+      .word-2 {
+        font-size: 19px;
+        margin-top: 20px;
+        color: #fffefe;
+        text-align: justify; /* 文字两端对齐 */
+        margin-right: 150px;
+        line-height: 2.5;
+        /* padding-left: 5ch; */
+      }
+      @media (max-width: 1200px) {
+        .content {
+          transform: scale(0.9); /* 缩小10% */
+          transform-origin: center; /* 缩放中心为页面中心 */
+        }
+      }
+
+      @media (max-width: 992px) {
+        .content {
+          transform: scale(0.8); /* 缩小20% */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          transform: scale(0.7); /* 缩小30% */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .content {
+          transform: scale(0.6); /* 缩小40% */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="wu"></div>
+      <div class="word">
+        <p class="word-1">勇往直前是红军突破封锁、取得胜利的关键</p>
+        <p class="word-2">
+          1935年5月，红军为抢渡大渡河，一昼夜疾行120公里抵达泸定桥。面对被拆除桥板的13根铁索和敌军机枪封锁，22名突击队员以血肉之躯攀索强攻。战士廖大珠等率先冲过火墙，用生命开辟通道。此役粉碎了蒋介石“让朱毛成为石达开第二”的企图，被西方称为“人类战争史上的奇迹”。毛泽东评价：“红军不是靠运气，而是靠勇气和决心！”。
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
